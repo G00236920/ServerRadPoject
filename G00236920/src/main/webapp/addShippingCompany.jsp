@@ -13,6 +13,25 @@
 
 	<form:form modelAttribute = "company">
 		<table>
+			<tr>
+				<td>Shipping Comapny ID:</td>
+				<td><form:input path="scid"></form:input></td>
+			</tr>
+			<tr>
+				<td>Company Name:</td>
+				<td><form:input path="name"></form:input></td>
+			</tr>
+			<tr>
+				<td>Home Port:</td>
+				<td><form:input path="homePort"></form:input></td>
+			</tr>
+			<tr>
+				<td>Balance:</td>
+				<td><form:input path="balance"></form:input></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Add"/></td>
+			</tr>
 		</table>
 	</form:form>
 
