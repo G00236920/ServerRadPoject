@@ -12,6 +12,19 @@
 <body>
 
 	<form:form modelAttribute = "order">
+		<table>
+			<tr>
+				<td>Ship Name:</td>
+				<td><form:input path="ship.name"></form:input></td>
+			</tr>
+			<tr>
+				<td>Shipping Company:</td>
+				<td><form:input path="shippingCompany.name"></form:input></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Order Ship"/></td>
+			</tr>
+		</table>
 	</form:form>
 </body>
 </html>

@@ -14,10 +14,6 @@
 	<form:form modelAttribute = "ship">
 		<table>
 			<tr>
-				<td>Ship ID:</td>
-				<td><form:input path="sid"></form:input></td>
-			</tr>
-			<tr>
 				<td>Ship Name:</td>
 				<td><form:input path="name"></form:input></td>
 			</tr>

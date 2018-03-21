@@ -14,10 +14,6 @@
 	<form:form modelAttribute = "company">
 		<table>
 			<tr>
-				<td>Shipping Comapny ID:</td>
-				<td><form:input path="scid"></form:input></td>
-			</tr>
-			<tr>
 				<td>Company Name:</td>
 				<td><form:input path="name"></form:input></td>
 			</tr>
