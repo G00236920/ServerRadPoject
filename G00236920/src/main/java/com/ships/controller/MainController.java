@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ships.dao.Connection;
 import com.ships.model.OrderInfo;
 import com.ships.model.Ship;
 import com.ships.model.ShippingCompany;
@@ -17,7 +18,10 @@ public class MainController {
 	
 	@RequestMapping(value = "/showShips", method=RequestMethod.GET)
 	public String showShips(HttpServletRequest request, Model m) {
+		
 		m.addAttribute("/showShips", request.getRequestURI());
+		m.addAttribute("ships", Connection.allShips());
+		
 		return "forward:showShips.jsp";
 	}
 	
