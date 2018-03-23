@@ -9,31 +9,34 @@
 
 <title>Add New Ship</title>
 </head>
-<body>
-
-	<form:form modelAttribute = "ship">
-		<table>
-			<tr>
-				<td>Ship Name:</td>
-				<td><form:input path="name"></form:input></td>
-			</tr>
-			<tr>
-				<td>No. of Passengers:</td>
-				<td><form:input path="passengers"></form:input></td>
-			</tr>
-			<tr>
-				<td>Cost:</td>
-				<td><form:input path="cost"></form:input></td>
-			</tr>
-			<tr>
-				<td>Metres:</td>
-				<td><form:input path="metres"></form:input></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Add"/></td>
-			</tr>
-		</table>
-	</form:form>
-
-</body>
+	<body>
+	
+		<form:form modelAttribute = "ship">
+			<table>
+				<tr>
+					<td>Ship Name:</td>
+					<td><form:input path="name"></form:input></td>
+				</tr>
+				<tr>
+					<td>No. of Passengers:</td>
+					<td><form:input path="passengers"></form:input></td>
+				</tr>
+				<tr>
+					<td>Cost:</td>
+					<td><form:input path="cost"></form:input></td>
+				</tr>
+				<tr>
+					<td>Metres:</td>
+					<td><form:input path="metres"></form:input></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Add"/></td>
+				</tr>
+				<tr>
+					<td><a href="/index.html">Home</a></td>
+				</tr>
+			</table>
+		</form:form>
+	
+	</body>
 </html>
