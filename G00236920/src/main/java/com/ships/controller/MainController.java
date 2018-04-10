@@ -2,6 +2,7 @@ package com.ships.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.ships.model.OrderInfo;
 import com.ships.model.Ship;
 import com.ships.model.ShippingCompany;
+import com.ships.services.ShipService;
 
 @Controller
 public class MainController {
@@ -19,7 +21,7 @@ public class MainController {
 	public String showShips(HttpServletRequest request, Model m) {
 		
 		m.addAttribute("/showShips", request.getRequestURI());
-		m.addAttribute("ships", /*Connection.allShips()*/null);
+		m.addAttribute("ships",  ShipService.getAllShips());
 		
 		return "forward:showShips.jsp";
 	}
