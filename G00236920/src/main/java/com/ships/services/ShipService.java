@@ -13,11 +13,15 @@ import com.ships.repositories.ShipRepository;
 public class ShipService {
 	@Autowired
 	ShipRepository shipRepository;
+	
+	//Get an Iterable list from the SQL Database
 	public Iterable<Ship> FindAll() {
 
 		return shipRepository.findAll();
 	}
-public Ship saveShip(Ship s) {
+	
+	//Add a new Ship to SQL
+	public Ship saveShip(Ship s) {
 		
 		return shipRepository.save(s);
 	}
