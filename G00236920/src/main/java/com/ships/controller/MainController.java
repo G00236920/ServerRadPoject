@@ -1,7 +1,11 @@
 package com.ships.controller;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+import com.ships.model.OrderInfo;
 import com.ships.model.Ship;
 
 import com.ships.services.ShipService;
@@ -34,6 +39,7 @@ public class MainController {
 
 		return "showShips";
 	}
+	
 	@RequestMapping(value = "/addShip", method = RequestMethod.GET)
 	public String addShip(@ModelAttribute("ship") Ship ship, HttpServletRequest h) {
 		System.out.println("HTTP Request = " + h.getMethod());
@@ -43,11 +49,9 @@ public class MainController {
 	
 	@RequestMapping(value = "/addShip", method = RequestMethod.POST)
 	public String addShipdb(@Valid @ModelAttribute("ship") Ship ship, BindingResult result) {
-		
 		if(result.hasErrors()) {
 			return "addShip";
 		}
-		
 		Ship s = new Ship();
 		String name = ship.getName();
 		int passengers = ship.getPassengers();
