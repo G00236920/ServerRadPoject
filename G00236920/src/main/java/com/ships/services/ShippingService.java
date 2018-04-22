@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ships.model.ShippingCompany;
-import com.ships.repositories.ShippingRepository;
+import com.ships.repositories.CompanyRepository;
 
 @Service
 public class ShippingService {
 	@Autowired
-	ShippingRepository shippingRepository;
+	CompanyRepository shippingRepository;
 	
 	//Get an Iterable list from the SQL Database
 	public Iterable<ShippingCompany> FindAll() {
