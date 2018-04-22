@@ -48,7 +48,7 @@ public class CompanyController {
 	//Get Method for Adding ship
 	//If user clicks a link to enter the AddShip JSP
 	@RequestMapping(value = "/addShippingCompany", method = RequestMethod.GET)
-	public String addCompany(@ModelAttribute("companies") ShippingCompany company, HttpServletRequest h) {
+	public String addCompany(@ModelAttribute("company") ShippingCompany company, HttpServletRequest h) {
 		
 		//Go to the AddShip Page
 		return "addShippingCompany";
