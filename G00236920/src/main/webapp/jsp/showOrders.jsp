@@ -12,13 +12,17 @@
 	<h1>Orders</h1>
 	<table border=1>
 		<tr>
-			<th>Order ID</th>
-			<th>Date</th>
+			<th>Order Number</th>
+			<th>Shipping Company Name</th>
+			<th>Ship Name</th>
+			<th>Order Date</th>
 		</tr>
 		<tr>
 			<c:forEach items="${orders}" var="orders">
 				<tr>
 					<td>${orders.oid}</td>
+					<td>${orders.shippingCompany.name}</td>
+					<td>${orders.ship.name}</td>
 					<td>${orders.date}</td>
 				</tr>
 			</c:forEach>
