@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ships.model.Ship;
 import com.ships.model.ShippingCompany;
+import com.ships.services.ShipService;
 import com.ships.services.ShippingService;
 
 
@@ -28,6 +29,7 @@ public class CompanyController {
 	
 	@Autowired
 	private ShippingService shippingService;
+	private ShipService shipService;
 	
 	
 	//Get Method for Showing companies
@@ -37,9 +39,10 @@ public class CompanyController {
 		
 		//Create a list of ships from the Sql data
 		ArrayList<ShippingCompany> c = (ArrayList<ShippingCompany>) shippingService.FindAll();
-
+		
 		//Add Companies so it can be viewed
 		model.addAttribute("companies", c);
+		
 
 		//Show the companies page
 		return "showShippingCompanies";

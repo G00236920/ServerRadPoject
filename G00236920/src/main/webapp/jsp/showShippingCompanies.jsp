@@ -23,7 +23,11 @@
 					<td>${companies.name}</td>
 					<td>${companies.homePort}</td>
 					<td>${companies.balance}</td>
-					<td>${companies.ships}</td>
+					<td>
+						<c:forEach items="${companies.ships}" var="ship">
+							<li>${ship.name}, ${ship.metres} Mtrs, ${ship.cost}</li>
+						</c:forEach>
+					</td>
 				</tr>
 			</c:forEach>
 		</tr>
