@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ships.model.Ship;
 import com.ships.model.ShippingCompany;
-import com.ships.services.ShipService;
 import com.ships.services.ShippingService;
 
 
@@ -29,7 +28,6 @@ public class CompanyController {
 	
 	@Autowired
 	private ShippingService shippingService;
-	private ShipService shipService;
 	
 	
 	//Get Method for Showing companies

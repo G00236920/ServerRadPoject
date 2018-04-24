@@ -2,7 +2,6 @@ package com.ships.controller;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -16,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ships.model.Ship;
-import com.ships.model.ShippingCompany;
 import com.ships.services.ShipService;
-import com.ships.services.ShippingService;
 
 
 @Controller
