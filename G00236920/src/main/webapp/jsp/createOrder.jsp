@@ -15,11 +15,15 @@
 			<table>
 				<tr>
 					<td>Ship Name:</td>
-					<td><form:input path="ship.name"></form:input></td>
+					<td>
+						<form:select path="ship" items="${ships}" />
+					</td>
 				</tr>
 				<tr>
-					<td>Shipping Company:</td>
-					<td><form:input path="shippingCompany.name"></form:input></td>
+					<td>Shipping Company1:</td>
+					<td>
+						<form:select path="shippingCompany" items="${companies}" />	
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Order Ship"/></td>

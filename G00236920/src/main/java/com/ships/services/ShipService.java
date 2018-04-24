@@ -2,6 +2,8 @@ package com.ships.services;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,12 @@ public class ShipService {
 	public Ship saveShip(Ship s) {
 		
 		return shipRepository.save(s);
+	}
+	
+	public List<Ship> nullShips(){
+		
+		
+		return shipRepository.findByShippingCompanyIsNull();
 	}
 
 
