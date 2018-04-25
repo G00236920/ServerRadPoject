@@ -61,18 +61,18 @@ public class OrderController {
 		List<ShippingCompany> sc = (List<ShippingCompany>) shippingService.FindAll();
 		
 		// Create countryList Map
-		Map<Integer,String> shipsList = new HashMap<Integer,String>();
-		Map<Integer,String> companiesList = new HashMap<Integer,String>();
+		Map<String,String> shipsList = new HashMap<String,String>();
+		Map<String,String> companiesList = new HashMap<String,String>();
 		
 		for (Ship ship : s) {
 			
-			shipsList.put(ship.getSid(), ship.getName());
+			shipsList.put( ship.getName(), "Cost= "+ship.getCost());
 			
 		}
 		
 		for (ShippingCompany company : sc) {
 			
-			companiesList.put(company.getScid(), company.getName());
+			companiesList.put(company.getName(), "Balance= "+company.getBalance());
 			
 		}
 
