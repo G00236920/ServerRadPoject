@@ -16,18 +16,22 @@
 				<tr>
 					<td>Ship Name:</td>
 					<td><form:input path="name"></form:input></td>
+					<td><form:errors path="name"></form:errors></td>			
 				</tr>
 				<tr>
 					<td>No. of Passengers:</td>
 					<td><form:input path="passengers"></form:input></td>
+					<td><form:errors path="passengers"></form:errors></td>	
 				</tr>
 				<tr>
 					<td>Cost:</td>
 					<td><form:input path="cost"></form:input></td>
+					<td><form:errors path="cost"></form:errors></td>	
 				</tr>
 				<tr>
 					<td>Metres:</td>
 					<td><form:input path="metres"></form:input></td>
+					<td><form:errors path="metres"></form:errors></td>	
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Add"/></td>
