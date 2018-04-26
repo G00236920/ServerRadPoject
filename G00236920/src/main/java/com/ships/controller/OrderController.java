@@ -1,5 +1,6 @@
 package com.ships.controller;
 
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,6 +37,9 @@ public class OrderController {
 	private ShipService shipService;
 	@Autowired 
 	private ShippingService shippingService;
+	
+	@SuppressWarnings("unused")
+	private String errorMessage;
 	
 	//Get Method for Showing Orders
 	//If user clicks a link to enter the ShowOrder JSP
@@ -95,7 +99,7 @@ public class OrderController {
 		//If the Post doesn't work, return to the Add Page
 		if(result.hasErrors()) {
 			
-			return "createOrder";
+			return "redirect:errorPage";
 			
 		}
 		
@@ -111,12 +115,50 @@ public class OrderController {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		String date = df.format(new java.util.Date());
 		
-		o.setDate(date);
-		
-		//Add the new Company
-		orderService.saveOrder(o);
+		//if the company balance is greater than the ship cost
+		if(company.getBalance().compareTo(ship.getCost()) <= 0){
+			
+			this.errorMessage = "Shipping Company Balance is less than the cost of the ship - Cannot place order";
+			return "redirect:errorPage";
+			
+		}
+		//if there is no ship or company
+		else if(ship == null || company == null) {
+			
+			this.errorMessage = "No ship or company selected";
+			return "redirect:errorPage";
+			
+		}
+		else {
+			
+			//set date
+			o.setDate(date);
+			
+			//Add the new order
+			orderService.saveOrder(o);
+			
+			//subtract the cost of the ship
+			BigDecimal balance = company.getBalance().subtract(ship.getCost());
+			
+			//set new balance
+			company.setBalance(balance);
+			
+			shippingService.saveCompany(company);
 
-		return "redirect:showOrders";
+			return "redirect:showOrders";
+			
+		}
+
+
+	}
+	
+	//error page
+	@RequestMapping(value = "/errorPage", method = RequestMethod.GET)
+	public String addOrder() {
+		
+		
+		//Go to the AddShip Page
+		return "errorPage";
 	}
 
 }

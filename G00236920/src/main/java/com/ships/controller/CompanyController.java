@@ -31,7 +31,7 @@ public class CompanyController {
 	
 	
 	//Get Method for Showing companies
-	//If user clicks a link to enter the ShowShip JSP
+	//If user clicks a link to enter the show companies
 	@RequestMapping(value = "/showShippingCompanies", method = RequestMethod.GET)
 	public String listShipping(Model model, HttpServletRequest h) {
 		
@@ -57,7 +57,7 @@ public class CompanyController {
 
 	
 	
-	//Post method for adding ship
+	//Post method for adding company
 	//If user Adds an Entry on the AddShippingCompany JSP
 	@RequestMapping(value = "/addShippingCompany", method = RequestMethod.POST)
 	public String addCompanydb(@Valid @ModelAttribute("company") ShippingCompany company, BindingResult result) {

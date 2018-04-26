@@ -20,7 +20,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Shipping Company1:</td>
+					<td>Shipping Company:</td>
 					<td>
 						<form:select path="shippingCompany" items="${companies}" />	
 					</td>
